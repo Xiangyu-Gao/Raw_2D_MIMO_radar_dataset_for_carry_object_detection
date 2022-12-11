@@ -35,7 +35,7 @@ Any questions or suggestions are welcome!
 Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu) 
 
 ## Introduction
-In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a 77GHz mmwave radar for the carry object detection scenario. The overall dataset contains approximately **3000 frames** of *radar data* as well as the synchronized *camera images* and *labels*. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the *TI cascaded-chip TIDEP-01012* board, with *12 transmit* antennas and *16 receive* antennas. With time-division multiplexing on all transmitters, it can form a large *2D-MIMO virtual array with 192 elements*, resulting in fine azimuth resolution (1.35°) and additional elevation resolution (19°). Other parameter configurations of radar were described in detail below. 
+In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a 77GHz mmwave radar for the carry object detection scenario. The overall dataset contains approximately **3000 frames** of *radar data* as well as the synchronized *camera images* and *labels*. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the *TI cascaded-chip TIDEP-01012* board, with *12 transmit* antennas and *16 receive* antennas. , it can form a large *2D-MIMO virtual array with 192 elements*, resulting in fine azimuth resolution (1.35°) and additional elevation resolution (19°). Other parameter configurations of radar were described in detail below. 
 
 The data collection was done in the building lobby and laboratory room with the focus of capturing the data for *three main objects carried by individual: phones, laptops, knives (include metallic butter knives and cutting knives)*. Each object can either be *openly carried* or be *concealed*. A single data collection run consisted of a subject holding one of the three objects listed above, and walking at a normal pace on a random path for 10 seconds in front of the testbed. To add variability to the data, the walking pattern of subjects was always randomize and the location of where the objects were concealed or how the objects were openly carried was always changed. 
 
@@ -51,11 +51,13 @@ https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-obje
 ```
 
 ## Data Format
-The dataset contains the raw ADC radar data in *.mat format, camera images in *.jpg format, and labels in *.txt format.
+The dataset contains the raw ADC radar data in **.mat* format, camera images in **.jpg* format, and labels in **.txt* format.
 
 ### Radar ADC Data
 
-*  
+*  For each radar frame, its raw data has 4 dimension: samples (256), chirps (61), receivers (16), transmitters (12). All transmitters were arranged with time-division multiplexing, i.e., send chirp signal one by one.
+
+<p align="center"> <img src='docs/cascaded_frame_structure.png' align="center" height="300px"> </p>
 
 * 2D-MIMO antenna array
 
