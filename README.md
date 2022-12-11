@@ -57,9 +57,13 @@ The dataset contains the raw ADC radar data in **.mat* format, camera images in 
 
 *  For each radar frame, its raw data has 4 dimension: samples (256), chirps (61), receivers (16), transmitters (12). All transmitters were arranged with time-division multiplexing, i.e., send chirp signal one by one.
 
+The example frame structure is shown as below:
 <p align="center"> <img src='docs/cascaded_frame_structure.png' align="center" height="300px"> </p>
 
 * 2D-MIMO antenna array
+
+The example frame structure is shown as below:
+<p align="center"> <img src='docs/antenna%20array.png' align="center" height="300px"> </p>
 
 * All radar configurations and algorithm configurations are included in [config](config.py).
 
