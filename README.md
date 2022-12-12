@@ -15,7 +15,7 @@ A dataset for the 2D-MIMO MMWave Radar with the raw ADC data being recorded. Thr
         title={Learning to Detect Open Carry and Concealed Object With 77 GHz Radar},   
         year={2022},  volume={16},  number={4},  pages={791-803},  doi={10.1109/JSTSP.2022.3171168}}
 
-> [**RAW ADC DATA OF 2D-MIMO MMWAVE RADAR FOR CARRY OBJECT DETECTION**](https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection),            
+> [**Raw ADC Data of 2D-MIMO MMWave radar for Carry Object Detection**](https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection),            
 > Xiangyu Gao, Sumit Roy, Hui Liu, Youchen Luo, Guanbin Xing, <br/>
 > *IEEE Dataport*
 
