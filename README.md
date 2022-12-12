@@ -50,13 +50,25 @@ Or from IEEE Dataport:
 https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection
 ```
 
-## Data Structure
+## Dataset Structure and Format
 
-The dataset contains the raw ADC radar data in **.mat* format, camera images in **.jpg* format, and labels in **.txt* format.
+The dataset consists of multiple sequences, e.g., "2021_05_11_bk_cc000", "2021_05_11_bk_cc001". Under each sequence folder, there exists the image folder *"images_0"*, and radar data folder *"radar_raw_frame"*, and label file *"labels.txt"*.
+
+The overall dataset structure is presented as below.
+
+    Carry Object
+    ---2021_05_11_bk_cc000
+       ---images_0
+       ---radar_raw_frame
+       ---labels.txt
+    ---2021_05_11_bk_cc001
+       ......
+       
+The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and labels in **.txt* format. The detailed data format is explained below.
 
 ### Radar ADC Data
 
-*  For each radar frame, its raw data has *4 dimension: samples (256), chirps (61), receivers (16), transmitters (12)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
+*  For each radar frame, its raw data (*.mat) has *4 dimension: samples (256), chirps (61), receivers (16), transmitters (12)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
 
     The example frame structure is shown as below:
 <p align="center"> <img src='docs/cascaded_frame_structure.png' align="center" height="300px"> </p>
@@ -73,31 +85,28 @@ The dataset contains the raw ADC radar data in **.mat* format, camera images in 
 
 ### Labels
 
-*  The labels are stored in  is 1440x1080 pixel image.
+*  Each row of "labels.txt" contains a label in format *[frame_id, uid, px, py, wid, len, class]*, where *frame_id* is the index of frame, *uid* is the unique tracking id of individual in this sequence, *px, py, wid, len* are the center along x, y axis, and the width, length of the bounding box for individual/pedestrian; *class* is the class id of carried object, with the id number represents below.
+
+        'laptop': 5,
+        'phone': 1,
+        'knife': 2,
+        'butter_knife': 2,
+        'key': 4,
 
 ## Dataset Tools
 
 ### Software Requirement and Installation
 
-Python 3.6, pytorch-1.5.1 (please refer to [INSTALL](requirements.txt) to set up libraries.)
+Python 3.6 (please refer to [INSTALL](requirements.txt) to set up libraries.)
 
-## 3D Slicing of Range-Velocity-Angle Data
-For convenience, in the sample codes we use the raw ADC data of each frame as input and perform the [Range, Velocity, and Angle FFT](https://github.com/Xiangyu-Gao/mmWave-radar-signal-processing-and-microDoppler-classification) during the process of slicing. Run following codes for 3D slicing.
-    
-    python slice3d.py
-    
-
-The slicing results are the RA slices, RV slices, and VA slices as shown in below figure.
-<p align="center"> <img src='docs/slice_viz.png' align="center" height="230px"> </p>
-
-
+Under prepare...
 
 ## License
 
 This tool is release under MIT license (see [LICENSE](LICENSE)).
 
 ## Acknowledgement
-This project is not possible without multiple great opensourced codebases. We list some notable examples below.  
+This project was supported by the [FUNLAB](https://depts.washington.edu/funlab/), [University of Washington](http://www.washington.edu/). This project is not possible without multiple great opensourced codebases. We list some notable examples below.
 
 * [microDoppler](https://github.com/Xiangyu-Gao/mmWave-radar-signal-processing-and-microDoppler-classification)
-* [rodnet](https://github.com/yizhou-wang/RODNet)
+* [ramp-cnn](https://github.com/Xiangyu-Gao/Radar-multiple-perspective-object-detection)
