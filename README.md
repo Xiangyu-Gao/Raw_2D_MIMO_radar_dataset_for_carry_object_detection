@@ -50,26 +50,30 @@ Or from IEEE Dataport:
 https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection
 ```
 
-## Data Format
+## Data Structure
+
 The dataset contains the raw ADC radar data in **.mat* format, camera images in **.jpg* format, and labels in **.txt* format.
 
 ### Radar ADC Data
 
-*  For each radar frame, its raw data has 4 dimension: samples (256), chirps (61), receivers (16), transmitters (12). All transmitters were arranged with time-division multiplexing, i.e., send chirp signal one by one.
+*  For each radar frame, its raw data has *4 dimension: samples (256), chirps (61), receivers (16), transmitters (12)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
 
-The example frame structure is shown as below:
+    The example frame structure is shown as below:
 <p align="center"> <img src='docs/cascaded_frame_structure.png' align="center" height="300px"> </p>
 
-* 2D-MIMO antenna array
-
-The example frame structure is shown as below:
+* The placement of transmitters and received were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/ug/tiduen5a/tiduen5a.pdf). Through TDM, the formed MIMO array is 2D with maximum horizontal aperture being 42.5λ and maximum vertical aperture being 3λ, where λ is the wavelength.  
+    The 2D MIMO array is shown in the right figure below:
 <p align="center"> <img src='docs/antenna%20array.png' align="center" height="300px"> </p>
 
-* All radar configurations and algorithm configurations are included in [config](config.py).
+* All radar configurations are included in [config](config.py).
 
 ### Camera Image
 
+*  The camera image for each frame is 1440x1080 pixel image.
+
 ### Labels
+
+*  The labels are stored in  is 1440x1080 pixel image.
 
 ## Dataset Tools
 
