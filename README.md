@@ -86,6 +86,7 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 *  Each row of "labels.txt" contains one label in format *[frame_id, uid, px, py, wid, len, class]*, where *frame_id* is the index of frame, *uid* is the unique tracking id of individual in this sequence, *px, py, wid, len* are the x center, y center, width, and length of the bounding box for individual/pedestrian; *class* is the class id of carried object, with the id number represents below.
 
+        class ids
         'laptop': 5,
         'phone': 1,
         'knife': 2,
