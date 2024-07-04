@@ -28,11 +28,6 @@ A dataset for the 2D-MIMO MMWave Radar with the raw ADC data being recorded. Thr
 ## Update
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
 
-## Contact
-Any questions or suggestions are welcome! 
-
-Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu) 
-
 ## Introduction
 In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a 77GHz mmwave radar for the carry object detection scenario. The overall dataset contains approximately **3000 frames** of *radar data* as well as the synchronized *camera images* and *labels*. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the *TI cascaded-chip TIDEP-01012* board, with *12 transmit* antennas and *16 receive* antennas. , it can form a large *2D-MIMO virtual array with 192 elements*, resulting in fine azimuth resolution (1.35°) and additional elevation resolution (19°). Other parameter configurations of radar were described in detail below. 
 
