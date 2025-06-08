@@ -26,6 +26,8 @@ A dataset for the 2D-MIMO MMWave Radar with the raw ADC data being recorded. Thr
         year = {2022} }
 
 ## Update
+***(June 7, 2025) Google drive download link has been fixed.***
+
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
 
 ## Introduction
@@ -37,7 +39,7 @@ The data collection was done in the building lobby and laboratory room with the 
 
 Download dataset from the google drive link:
 ```
-https://drive.google.com/file/d/1IcrY3Hm-o9fxUwlZ-j2rLgLuAn0XQSKl/view?usp=share_link
+https://drive.google.com/file/d/1vQ_TKaMZDfF3AlOVaosJf310VVh25t8n/view?usp=sharing
 ``` 
 Or from IEEE Dataport:
 ```
